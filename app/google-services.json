@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "255338673676",
+    "project_id": "egypts-book",
+    "storage_bucket": "egypts-book.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:255338673676:android:df0b83169e12132f792029",
+        "android_client_info": {
+          "package_name": "koas.boos.egae"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "255338673676-k9vpep2bj2lri6iuupkbk2kukepnispq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3clJQ-W-kcGQji1yxhKVNDoguWDr7jMg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "255338673676-k9vpep2bj2lri6iuupkbk2kukepnispq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
