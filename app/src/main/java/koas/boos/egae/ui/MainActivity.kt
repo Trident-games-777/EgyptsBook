@@ -4,11 +4,11 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.provider.Settings
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import koas.boos.egae.R
 import koas.boos.egae.WebViewActivity
+import koas.boos.egae.game.StartGameActivity
 import java.io.File
 
 class MainActivity : AppCompatActivity() {
@@ -20,24 +20,26 @@ class MainActivity : AppCompatActivity() {
         val factory = EgyptViewModelFactory(application)
         val viewModel = ViewModelProvider(this, factory)[EgyptViewModel::class.java]
 
-        if (viewModel.checkFirstLaunch()) {
-            Log.d("YYY", "First launch")
-            viewModel.firstLink.observe(this) { link ->
-                Log.d("YYY", "Link = $link")
-                viewModel.saveLinkToPref(link)
-                viewModel.sendOneSignalTag()
+        if (!checks() && tracks() != "1") {
+            if (viewModel.checkFirstLaunch()) {
+                viewModel.firstLink.observe(this) { link ->
+                    viewModel.saveLinkToPref(link)
+                    viewModel.sendOneSignalTag()
 
-                with(getSharedPreferences(SHARED_PREF, Context.MODE_PRIVATE).edit()) {
-                    putBoolean(FIRST_LAUNCH, false)
-                    apply()
+                    with(getSharedPreferences(SHARED_PREF, Context.MODE_PRIVATE).edit()) {
+                        putBoolean(FIRST_LAUNCH, false)
+                        apply()
+                    }
+                    startWebView(link)
                 }
-                startWebView(link)
+            } else {
+                val url =
+                    getSharedPreferences(SHARED_PREF, Context.MODE_PRIVATE).getString(LINK, "")
+                startWebView(url!!)
             }
         } else {
-            Log.d("YYY","Not first launch")
-            val url = getSharedPreferences(SHARED_PREF, Context.MODE_PRIVATE).getString(LINK, "")
-            Log.d("YYY", "Link = $url")
-            startWebView(url!!)
+            startActivity(Intent(this, StartGameActivity::class.java))
+            finish()
         }
     }
 

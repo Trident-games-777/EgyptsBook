@@ -18,7 +18,6 @@ class WebViewActivity : AppCompatActivity() {
     var callback: ValueCallback<Uri>? = null
     private val resultCode = 1
 
-
     private val imageTitle = "Image Chooser"
     private val image1 = "image/*"
 
@@ -102,7 +101,6 @@ class WebViewActivity : AppCompatActivity() {
 
         override fun onPageFinished(view: WebView?, url: String?) {
             super.onPageFinished(view, url)
-            Log.d("YYY", "OnPageFinished url: $url")
             if (!url?.contains("trident")!! && !url.contains("fallreasurgamee.monster")) {
                 viewModel.saveLinkToPref(url)
             }

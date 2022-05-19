@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Admin User/AndroidStudioProjects/EgyptsBook/app/src/main/res/drawable/icon_background.xml" value="0.152" />
+        <entry key="..\:/Users/Admin User/AndroidStudioProjects/EgyptsBook/app/src/main/res/layout/activity_game.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/Admin User/AndroidStudioProjects/EgyptsBook/app/src/main/res/layout/activity_main.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/Admin User/AndroidStudioProjects/EgyptsBook/app/src/main/res/layout/activity_start_game.xml" value="0.18" />
         <entry key="..\:/Users/Admin User/AndroidStudioProjects/EgyptsBook/app/src/main/res/layout/activity_web_view.xml" value="0.17074275362318841" />
       </map>
     </option>
